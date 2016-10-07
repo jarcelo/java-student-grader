@@ -179,7 +179,7 @@ public class Student
     public double getQuizAvg()
     {
         if (!built) {
-            calcStudent();
+            calculateGrade();
         }
         return quizAvg;
     }
@@ -187,7 +187,7 @@ public class Student
     public double getCourseAvg()
     {
         if (!built) {
-            calcStudent();
+            calculateGrade();
         }
         return courseAvg;
     }
@@ -195,12 +195,12 @@ public class Student
     public String getLetterGrade()
     {
         if (!built) {
-            calcStudent();
+            calculateGrade();
         }
         return letterGrade;
     }
 
-    private void calcStudent()
+    private void calculateGrade()
     {
         try {
             double[] quizScore = {quiz1, quiz2, quiz3, quiz4, quiz5, quizMakeUp};
@@ -237,7 +237,7 @@ public class Student
     
     @Override
     public String toString(){
-        calcStudent();
+        calculateGrade();
         String s = studentID + "," + lastName + "," + firstName + "," +
                     quiz1 + "," + quiz2 + "," + quiz3 + "," + quiz4 + "," +
                     quiz5 + "," + quizMakeUp + "," + midTerm + "," + 
